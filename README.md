@@ -44,22 +44,22 @@ A _"test"_ script already exists you can use to run tests against your code.
 
 #### Build an API
 
-- [] Inside `api/actions/actions-router.js` build endpoints for performing CRUD operations on _actions_:
+-[X] Inside `api/actions/actions-router.js` build endpoints for performing CRUD operations on _actions_:
   -[X] `[GET] /api/actions` returns an array of actions (or an empty array) as the body of the _response_.
   -[X] `[GET] /api/actions/:id` returns an action with the given `id` as the body of the _response_.
   -[X]`[POST] /api/actions` returns the newly created action as the body of the _response_.
-  - `[PUT] /api/actions/:id` returns the updated action as the body of the _response_.
-  - `[DELETE] /api/actions/:id` returns no _response_ body.
+  -[X] `[PUT] /api/actions/:id` returns the updated action as the body of the _response_.
+  -[X] `[DELETE] /api/actions/:id` returns no _response_ body.
 
-- [ ] Inside `api/projects/projects-router.js` build endpoints for performing CRUD operations on _projects_:
-  - `[GET] /api/projects` returns an array of projects (or an empty array) as the body of the response.
-  - `[GET] /api/projects/:id` returns a project with the given `id` as the body of the _response_.
-  - `[POST] /api/projects` returns the newly created project as the body of the _response_.
-  - `[PUT] /api/projects/:id` returns the updated project as the body of the _response_.
-  - `[DELETE] /api/projects/:id` returns no _response_ body.
+- [X] Inside `api/projects/projects-router.js` build endpoints for performing CRUD operations on _projects_:
+  -[X] `[GET] /api/projects` returns an array of projects (or an empty array) as the body of the response.
+  -[X] `[GET] /api/projects/:id` returns a project with the given `id` as the body of the _response_.
+  -[X] `[POST] /api/projects` returns the newly created project as the body of the _response_.
+  -[X] `[PUT] /api/projects/:id` returns the updated project as the body of the _response_.
+  -[X] `[DELETE] /api/projects/:id` returns no _response_ body.
 
-- [ ] Inside `api/projects/projects-router.js` add an endpoint for retrieving the list of actions for a project:
-  - `[GET] /api/projects/:id/actions` sends an array of actions (or an empty array) as the body of the response.
+- [X] Inside `api/projects/projects-router.js` add an endpoint for retrieving the list of actions for a project:
+  -[X]`[GET] /api/projects/:id/actions` sends an array of actions (or an empty array) as the body of the response.
 
 - Both Projects and Actions have an optional `completed` property (see Database Schemas below). In both cases it's a boolean stored in the database as a 1 or a 0. Make sure to transform the raw `completed` values obtained from the db to `true` or `false`, before sending them back to the client.
 - [X]When adding an action, make sure the `project_id` provided belongs to an existing `project`.
@@ -131,18 +131,23 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission format
 
-- [ ] Submit via Codegrade by pushing commits to your `<firstName-lastName>` branch on Github.
-- [ ] Create a pull-request to merge `<firstName-lastName>` branch into main.
-- [ ] Check Codegrade for automated feedback.
-- [ ] Check Codegrade on Monday following the Sprint Challenge for reviewer feedback.
-- [ ] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
+- [x] Submit via Codegrade by pushing commits to your `<firstName-lastName>` branch on Github.
+- [x] Create a pull-request to merge `<firstName-lastName>` branch into main.
+- [x] Check Codegrade for automated feedback.
+- [x] Check Codegrade on Monday following the Sprint Challenge for reviewer feedback.
+- [x] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+allows middleware, routing, and dynamically rendering pages based on arguments passed in
 1. Understand and explain the use of Middleware.
+middleware is a package that intercepts a sent promise to either view or change that promise
 1. The basic principles of the REST architectural style.
+client/server seperation, cacheable, uniform interface, layered system
 1. Understand and explain the use of Express Routers.
+express routers allow us to take giant files with lots of requests and split them up into more managable files, similar to react
 1. Describe tooling used to manually test the correctness of an API.
+i prefer postman, but httpie seems awesome too. It essentially lets you fake a CRUD operation to the server, allowing quick and easy testing

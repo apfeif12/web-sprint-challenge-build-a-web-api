@@ -15,14 +15,17 @@ const checkActionId = async (req, res, next) => {
     }
 };
 
-const checkProductId = async (req, res, next) => {
-    const project = await Projects.get(req.body.project_id);
-    if (project) {
-        next();
-    } else {
-        res.status(404).json({
-            message: `project id not found`,
-        });
+const checkProjectId = async (req, res, next) => {
+    try {
+        const project = await Projects.get(req.params.id);
+        if (!project) {
+            res.status(404).json(`No project with id: ${req.params.id}`);
+        } else {
+            req.project = project;
+            next();
+        }
+    } catch (error) {
+        res.status(500).json(error.message);
     }
 };
 
@@ -34,4 +37,17 @@ const validateAction = (req, res, next) => {
     }
 };
 
-module.exports = { checkActionId, checkProductId, validateAction };
+const validateProject = (req, res, next) => {
+    if (!req.body.description || !req.body.name || !req.body.completed) {
+        res.status(400).json({ error: "missing a field" });
+    } else {
+        next();
+    }
+};
+
+module.exports = {
+    checkActionId,
+    checkProjectId,
+    validateAction,
+    validateProject,
+};
