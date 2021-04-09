@@ -26,9 +26,9 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 ### Task 2: CodeGrade Setup
 
-- [ ] Follow [instructions](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374) to set up Codegrade's Webhook and Deploy Key, making sure your deployment is set to your `<firstName-lastName>` branch.
-- [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
-- [ ] Check to see that Codegrade has accepted your git submission.
+- [x] Follow [instructions](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374) to set up Codegrade's Webhook and Deploy Key, making sure your deployment is set to your `<firstName-lastName>` branch.
+- [x] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
+- [x] Check to see that Codegrade has accepted your git submission.
 
 ### Task 3: Project Requirements (MVP)
 
@@ -38,16 +38,16 @@ Your finished project must include all of the following requirements:
 
 A _"test"_ script already exists you can use to run tests against your code.
 
-- [ ] Write an _npm script_ named _"start"_ that uses `node` to run the API server.
-- [ ] Write an _npm script_ named _"server"_ that uses `nodemon`to run the API server.
-- [ ] Install _nodemon_ as a development dependency only that would not be used in production.
+- [x] Write an _npm script_ named _"start"_ that uses `node` to run the API server.
+- [x] Write an _npm script_ named _"server"_ that uses `nodemon`to run the API server.
+- [x] Install _nodemon_ as a development dependency only that would not be used in production.
 
 #### Build an API
 
-- [ ] Inside `api/actions/actions-router.js` build endpoints for performing CRUD operations on _actions_:
-  - `[GET] /api/actions` returns an array of actions (or an empty array) as the body of the _response_.
-  - `[GET] /api/actions/:id` returns an action with the given `id` as the body of the _response_.
-  - `[POST] /api/actions` returns the newly created action as the body of the _response_.
+- [] Inside `api/actions/actions-router.js` build endpoints for performing CRUD operations on _actions_:
+  -[X] `[GET] /api/actions` returns an array of actions (or an empty array) as the body of the _response_.
+  -[X] `[GET] /api/actions/:id` returns an action with the given `id` as the body of the _response_.
+  -[X]`[POST] /api/actions` returns the newly created action as the body of the _response_.
   - `[PUT] /api/actions/:id` returns the updated action as the body of the _response_.
   - `[DELETE] /api/actions/:id` returns no _response_ body.
 
@@ -62,13 +62,15 @@ A _"test"_ script already exists you can use to run tests against your code.
   - `[GET] /api/projects/:id/actions` sends an array of actions (or an empty array) as the body of the response.
 
 - Both Projects and Actions have an optional `completed` property (see Database Schemas below). In both cases it's a boolean stored in the database as a 1 or a 0. Make sure to transform the raw `completed` values obtained from the db to `true` or `false`, before sending them back to the client.
-- When adding an action, make sure the `project_id` provided belongs to an existing `project`.
-- If you try to add an action with an `id` of 3 and there is no project with that `id` the database will return an error.
-- Use an HTTP client like `HTTPie`, `Postman` or `Insomnia` to test the API's endpoints.
-- Use Express Routers to organize your endpoints.
-- The use of middlewares to avoid repetitive code is highly recommended.
-- Your `server.js` file lives inside the `api` folder.
-- Your `index.js` file lives at the root of the project.
+- [X]When adding an action, make sure the `project_id` provided belongs to an existing `project`.
+
+
+- [X]If you try to add an action with an `id` of 3 and there is no project with that `id` the database will return an error.
+- [X]Use an HTTP client like `HTTPie`, `Postman` or `Insomnia` to test the API's endpoints.
+- [X]Use Express Routers to organize your endpoints.
+- [X]The use of middlewares to avoid repetitive code is highly recommended.
+- [X]Your `server.js` file lives inside the `api` folder.
+- [X]Your `index.js` file lives at the root of the project.
 
 ### Database Schemas
 
